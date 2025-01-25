@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/singleportfolio/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

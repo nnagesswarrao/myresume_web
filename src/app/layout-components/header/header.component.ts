@@ -18,6 +18,7 @@ export class HeaderComponent {
   isMobileMenuOpen = false;
   activeSection: string = '';
 
+  
   menuItems: MenuItem[] = [
     { id: 'summary', label: 'Summary', icon: 'fas fa-user-tie' },
     { id: 'experience', label: 'Experience', icon: 'fas fa-briefcase' },

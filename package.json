@@ -1,13 +1,14 @@
 {
-  "name": "singleportpolia",
+  "name": "singleportfolio",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production && npm run rename:index",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:singleportpolia": "node dist/singleportpolia/server/server.mjs"
+    "serve:ssr:singleportpolia": "node dist/singleportpolia/server/server.mjs",
+     "rename:index": "mv dist/browser/index.csr.html dist/browser/index.html"
   },
   "private": true,
   "dependencies": {

@@ -13,11 +13,13 @@
             <p class="text-lg">{{resumeJson.summary}}</p>
           </div>
           <div class="flex flex-col space-y-3">
-            <a [href]="'tel:' + resumeJson.contact.phone" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
+            <a [href]="'tel:' + resumeJson.contact.phone"
+              class="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
               <span class="material-icons mr-3">phone</span>
               <span>{{resumeJson.contact.phone}}</span>
             </a>
-            <a [href]="'mailto:' + resumeJson.contact.email" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
+            <a [href]="'mailto:' + resumeJson.contact.email"
+              class="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
               <span class="material-icons mr-3">mail</span>
               <span>{{resumeJson.contact.email}}</span>
             </a>
@@ -89,7 +91,12 @@
       <div class="grid gap-6">
         <div class="transform hover:scale-[1.02] transition-transform duration-300 bg-gray-50 rounded-lg p-6"
           *ngFor="let project of resumeJson.projects">
-          <h3 class="text-xl font-semibold text-gray-700">{{project.name}}</h3>
+          <h3 class="text-xl font-semibold text-gray-700">
+            <a [href]="project.link" target="_blank" class="hover:underline">
+              {{project.name}}
+            </a>
+          </h3>
+        
           <p class="text-blue-600 text-sm mb-2">{{project.period}}</p>
           <ul class="space-y-2 text-gray-600">
             <li class="flex items-start space-x-2" *ngFor="let detail of project.details">

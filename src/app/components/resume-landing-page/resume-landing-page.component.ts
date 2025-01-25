@@ -61,6 +61,7 @@ export class ResumeLandingPageComponent implements OnInit, AfterViewInit {
       {
         "name": "Task Management System",
         "period": "Nov 2024 - Present",
+        "link":"https://tm.dreamstep.in/",
         "details": [
           "Designed and developed a comprehensive task management platform for task creation, assignment, and monitoring using Material Angular, TailwindCSS, and DevExtreme Data Grid.",
           "Implemented workflows for assigning tasks between government officials, departments, and the public.",
@@ -74,6 +75,7 @@ export class ResumeLandingPageComponent implements OnInit, AfterViewInit {
       {
         "name": "RTMS (Real-Time Monitoring System)",
         "period": "May 2024 - Nov 2024",
+        "link":"https://vegamvc.dreamstep.in/",
         "details": [
           "Developed a comprehensive video conferencing application for both mobile and browser platforms.",
           "Utilized Angular 17, Capacitor, and Ionic Angular for front-end and mobile app development.",
@@ -85,6 +87,7 @@ export class ResumeLandingPageComponent implements OnInit, AfterViewInit {
       {
         "name": "Easy Polling Application",
         "period": "Mar 2024 - May 2024",
+        "link":"https://easypoll.dreamstep.in/",
         "details": [
           "Developed a paid news module for the Easy Polling Application.",
           "Implemented scraping posts from Facebook, Instagram, Twitter, and daily newspapers using Puppeteer in Node.js.",
@@ -97,6 +100,7 @@ export class ResumeLandingPageComponent implements OnInit, AfterViewInit {
       {
         "name": "Araku Tourism",
         "period": "Oct 2023 - Feb 2024",
+        "link":"https://thearakutourism.com/",
         "details": [
           "Streamlined the resort booking process by implementing an online platform.",
           "Developed an email notification system for seamless communication with customers.",
@@ -110,6 +114,7 @@ export class ResumeLandingPageComponent implements OnInit, AfterViewInit {
       {
         "name": "TSRTC Commercial",
         "period": "Aug 2022 - Sep 2023",
+        "link":"https://tgsrtccommercial.in/",
         "details": [
           "Generated monthly invoices and expedited payment collection through online platforms.",
           "Designed and executed dashboards for the admin portal, improving data visibility and decision-making.",

@@ -3,15 +3,22 @@
         <nav class="flex items-center justify-between h-20 py-4">
             <!-- Logo/Name section -->
             <div class="relative group">
-                <h1  (click)="scrollToSection('summary')"
-                 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 transition-all duration-300">
+                <h1 (click)="scrollToSection('summary')"
+                    class="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 transition-all duration-300">
                     Sivakoti Veeranageswara Rao
                 </h1>
                 <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 transition-all duration-300 group-hover:w-full"></div>
             </div>
 
-            <!-- Navigation Menu -->
-            <ul class="flex items-center space-x-4">
+            <!-- Mobile Menu Button -->
+            <button (click)="toggleMobileMenu()" class="lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Desktop Navigation Menu -->
+            <ul class="hidden lg:flex items-center space-x-4">
                 <li *ngFor="let item of menuItems">
                     <a (click)="scrollToSection(item.id)"
                         [class]="activeSection === item.id ? 
@@ -21,6 +28,20 @@
                     </a>
                 </li>
             </ul>
+
+            <!-- Mobile Navigation Menu -->
+            <div [class]="isMobileMenuOpen ? 'block' : 'hidden'" class="lg:hidden absolute top-20 left-0 right-0 bg-white shadow-lg">
+                <ul class="px-6 py-4 space-y-2">
+                    <li *ngFor="let item of menuItems">
+                        <a (click)="scrollToSection(item.id); toggleMobileMenu()"
+                            [class]="activeSection === item.id ? 
+                            'block px-5 py-3 rounded-lg text-blue-600 bg-blue-50 font-medium text-sm transition-all duration-300 cursor-pointer' : 
+                            'block px-5 py-3 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium text-sm transition-all duration-300 cursor-pointer'">
+                            {{item.label}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </div>
 </div>

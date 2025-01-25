@@ -7,8 +7,8 @@
     "build": "ng build --configuration production && npm run rename:index",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:singleportpolia": "node dist/singleportpolia/server/server.mjs",
-     "rename:index": "mv dist/browser/index.csr.html dist/browser/index.html"
+    "serve:ssr:singleportfolio": "node dist/singleportfolio/server/server.mjs",
+     "rename:index": "mv dist/singleportfolio/browser/index.csr.html dist/singleportfolio/browser/index.html"
   },
   "private": true,
   "dependencies": {

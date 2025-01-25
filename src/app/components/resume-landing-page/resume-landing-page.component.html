@@ -1,0 +1,145 @@
+<div class="min-h-screen bg-gradient-to-br from-blue-50 via-gray-50 to-indigo-50 pt-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-5xl mx-auto space-y-10">
+    <!-- Summary Section -->
+    <div id="summary" class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b pb-2">Professional Summary</h2>
+      <div class="prose text-gray-600 leading-relaxed">
+        <p>{{resumeJson.summary}}</p>
+      </div>
+    </div>
+
+    <!-- Experience Section -->
+    <div id="experience" class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in delay-100">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Work Experience</h2>
+      <div class="space-y-8">
+        <div class="transform hover:scale-[1.02] transition-all duration-300 ease-in-out hover:shadow-md bg-gray-50 rounded-lg p-6" *ngFor="let exp of resumeJson.experience; let i = index" [ngStyle]="{'animation-delay': i * 100 + 'ms'}">
+          <h3 class="text-2xl font-semibold text-gray-700">{{exp.role}}</h3>
+          <p class="text-blue-600 font-medium mb-3">{{exp.company}} • {{exp.period}}</p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start space-x-2" *ngFor="let responsibility of exp.responsibilities">
+              <span class="text-blue-500 mt-1">•</span>
+              <span>{{responsibility}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education Section -->
+    <div id="education" class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in delay-200">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Education</h2>
+      <div class="grid gap-6">
+        <div class="transform hover:scale-[1.02] transition-transform duration-300 bg-gray-50 rounded-lg p-6" *ngFor="let edu of resumeJson.education">
+          <h3 class="text-xl font-semibold text-gray-700">{{edu.degree}}</h3>
+          <p class="text-blue-600">{{edu.institution}}</p>
+          <p class="text-gray-600">{{edu.field}}</p>
+          <p class="text-gray-600 font-medium">Grade: {{edu.grade}}</p>
+          <p class="text-gray-500 text-sm">{{edu.period}}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects" class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in delay-300">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Projects</h2>
+      <div class="grid gap-6">
+        <div class="transform hover:scale-[1.02] transition-transform duration-300 bg-gray-50 rounded-lg p-6" *ngFor="let project of resumeJson.projects">
+          <h3 class="text-xl font-semibold text-gray-700">{{project.name}}</h3>
+          <p class="text-blue-600 text-sm mb-2">{{project.period}}</p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start space-x-2" *ngFor="let detail of project.details">
+              <span class="text-blue-500 mt-1">•</span>
+              <span>{{detail}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div id="skills" class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in delay-400">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Technical Skills</h2>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-lg text-sm font-medium hover:bg-blue-200 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-sm" 
+              *ngFor="let skill of resumeJson.technical_skills">
+          {{skill}}
+        </span>
+      </div>
+    </div>
+
+    <!-- Personal Information Section -->
+    <div id="personal" class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in delay-500">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Personal Information</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-4">
+          <div class="space-y-3">
+            <p class="text-gray-700"><span class="font-semibold text-gray-900">Date of Birth:</span> {{resumeJson.personal_information.date_of_birth}}</p>
+            <p class="text-gray-700"><span class="font-semibold text-gray-900">Gender:</span> {{resumeJson.personal_information.gender}}</p>
+            <p class="text-gray-700"><span class="font-semibold text-gray-900">Marital Status:</span> {{resumeJson.personal_information.marital_status}}</p>
+            <p class="text-gray-700"><span class="font-semibold text-gray-900">Nationality:</span> {{resumeJson.personal_information.nationality}}</p>
+            <p class="text-gray-700"><span class="font-semibold text-gray-900">Father's Name:</span> {{resumeJson.personal_information.father_name}}</p>
+            <p class="text-gray-700"><span class="font-semibold text-gray-900">Languages:</span> {{resumeJson.personal_information.languages_known.join(', ')}}</p>
+          </div>
+        </div>
+
+        <div class="space-y-8">
+          <!-- Interests -->
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Interests</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-sm" *ngFor="let interest of resumeJson.interests">
+                {{interest}}
+              </span>
+            </div>
+          </div>
+
+          <!-- Strengths -->
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Strengths</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-sm" *ngFor="let strength of resumeJson.strengths">
+                {{strength}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+
+  .section-content {
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+  }
+
+  .section-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+</style>

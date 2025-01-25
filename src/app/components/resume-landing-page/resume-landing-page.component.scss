@@ -1,0 +1,232 @@
+
+
+.profile-header {
+  text-align: center;
+  padding: 2rem 0;
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    
+    p {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #666;
+      
+      i {
+        color: #007bff;
+      }
+    }
+  }
+}
+
+.resume-section {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+  }
+
+  &:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+}
+
+
+.experience-item, .education-item, .project-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+  h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+
+  .company, .institution, .tech-stack {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.project-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  
+  h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+
+  .period {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    
+    li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+      position: relative;
+      
+      &:before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: #007bff;
+      }
+    }
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+
+  .skill-category {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+    h3 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 0.5rem;
+        padding-left: 1.5rem;
+        position: relative;
+
+        &:before {
+          content: "•";
+          position: absolute;
+          left: 0;
+          color: #007bff;
+        }
+      }
+    }
+  }
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  
+  li {
+    background: #f8f9fa;
+    padding: 0.8rem 1.2rem;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    
+    &:hover {
+      background: #007bff;
+      color: white;
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+.personal-info-grid {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  
+  .info-item {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    
+    p {
+      margin: 0.5rem 0;
+      
+      strong {
+        color: #2c3e50;
+      }
+    }
+  }
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.interests-section,
+.strengths-section {
+  margin-top: 2rem;
+  
+  h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    
+    li {
+      background: #f8f9fa;
+      padding: 0.6rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: #666;
+      border: 1px solid #dee2e6;
+    }
+  }
+}
+
+.summary-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}

@@ -9,7 +9,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
   styleUrl: './resume-landing-page.component.scss'
 })
 export class ResumeLandingPageComponent implements OnInit, AfterViewInit {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   resumeJson = {
     "name": "Sivakoti Veeranageswara Rao",
@@ -126,7 +126,7 @@ export class ResumeLandingPageComponent implements OnInit, AfterViewInit {
         ]
       }
     ],
-      "technical_skills": [
+    "technical_skills": [
       "Matlab",
       "Core Java and Advanced Java",
       "C and JavaScript",
@@ -161,6 +161,22 @@ export class ResumeLandingPageComponent implements OnInit, AfterViewInit {
       "Self-confidence",
       "Hardworking",
       "Positive attitude"
+    ],
+    socialMedia: [
+
+      {
+        name: "facebook",
+        link: "https://www.facebook.com/sivakoti.veeranageswara"
+      },
+
+      {
+        name: "twitter",
+        link: "https://www.twitter.com/sivakoti.veeranageswara"
+      },
+      {
+        name: "youtube",
+        link: "https://www.youtube.com/sivakoti.veeranageswara"
+      },
     ]
   }
 

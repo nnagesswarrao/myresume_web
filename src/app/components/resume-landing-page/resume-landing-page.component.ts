@@ -172,10 +172,11 @@ export class ResumeLandingPageComponent implements OnInit, AfterViewInit {
     socialMedia: [
 
       {
-        name: "facebook",
-        link: "https://www.facebook.com/nnagesswarrao"
+        name: "linkedin",
+        link: "https://www.linkedin.com/in/veera-nageswara-rao-sivakoti-742a7052"
       },
 
+      
       {
         name: "twitter",
         link: "https://x.com/nnagesswarrao95"
@@ -184,11 +185,13 @@ export class ResumeLandingPageComponent implements OnInit, AfterViewInit {
         name: "youtube",
         link: "https://youtube.com/@sivakotiveeranageswararao4038"
       },
-
       {
-        name: "linkedin",
-        link: "https://www.linkedin.com/in/veera-nageswara-rao-sivakoti-742a7052"
+        name: "facebook",
+        link: "https://www.facebook.com/nnagesswarrao"
       },
+
+
+    
       {
         name: "instagram",
         link: "https://www.instagram.com/nnagesswarrao"

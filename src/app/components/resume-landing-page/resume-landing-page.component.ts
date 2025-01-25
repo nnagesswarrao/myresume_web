@@ -144,7 +144,7 @@ export class ResumeLandingPageComponent implements OnInit, AfterViewInit {
       "HTML, CSS, and SCSS"
     ],
     "personal_information": {
-      "date_of_birth": "4th June 1995",
+      // "date_of_birth": "4th June 1995",
       "gender": "Male",
       "marital_status": "Unmarried",
       "nationality": "Indian",

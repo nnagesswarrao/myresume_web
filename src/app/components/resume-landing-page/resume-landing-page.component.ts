@@ -151,7 +151,7 @@ export class ResumeLandingPageComponent implements OnInit, AfterViewInit {
     "personal_information": {
       // "date_of_birth": "4th June 1995",
       "gender": "Male",
-      "marital_status": "Unmarried",
+      "marital_status": "married",
       "nationality": "Indian",
       "father_name": "Mr. S. Arjunudu",
       "languages_known": ["English", "Telugu"]
@@ -173,16 +173,25 @@ export class ResumeLandingPageComponent implements OnInit, AfterViewInit {
 
       {
         name: "facebook",
-        link: "https://www.facebook.com/sivakoti.veeranageswara"
+        link: "https://www.facebook.com/nnagesswarrao"
       },
 
       {
         name: "twitter",
-        link: "https://www.twitter.com/sivakoti.veeranageswara"
+        link: "https://x.com/nnagesswarrao95"
       },
       {
         name: "youtube",
-        link: "https://www.youtube.com/sivakoti.veeranageswara"
+        link: "https://youtube.com/@sivakotiveeranageswararao4038"
+      },
+
+      {
+        name: "linkedin",
+        link: "https://www.linkedin.com/in/veera-nageswara-rao-sivakoti-742a7052"
+      },
+      {
+        name: "instagram",
+        link: "https://www.instagram.com/nnagesswarrao"
       },
     ]
   }

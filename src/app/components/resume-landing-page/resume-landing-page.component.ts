@@ -13,6 +13,8 @@ export class ResumeLandingPageComponent implements OnInit, AfterViewInit {
 
   resumeJson = {
     "name": "Sivakoti Veeranageswara Rao",
+    "designation": "Associate Software Engineer",
+    "profileImage": "assets/images/intro.png",
     "contact": {
       "phone": "+91 9515302024",
       "email": "nagusivakoti1995@gmail.com"
@@ -198,5 +200,8 @@ export class ResumeLandingPageComponent implements OnInit, AfterViewInit {
         observer.observe(section);
       });
     }
+  }
+  downloadResume() {
+    window.open('assets/files/SIVAKOTIVEERANAGESWARARAO.docx', '_blank');
   }
 }

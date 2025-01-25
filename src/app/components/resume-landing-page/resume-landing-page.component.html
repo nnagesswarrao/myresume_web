@@ -1,18 +1,73 @@
 <div class="min-h-screen bg-gradient-to-br from-blue-50 via-gray-50 to-indigo-50 pt-20 px-4 sm:px-6 lg:px-8">
   <div class="max-w-5xl mx-auto space-y-10">
+
+
     <!-- Summary Section -->
-    <div id="summary" class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in">
-      <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b pb-2">Professional Summary</h2>
-      <div class="prose text-gray-600 leading-relaxed">
-        <p>{{resumeJson.summary}}</p>
+    <div id="summary"
+      class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out p-8 section-content opacity-0 translate-y-4 animate-fade-in">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <!-- Left Column - Summary -->
+        <div class="space-y-6">
+          <h1 class="text-4xl font-bold text-gray-800">{{resumeJson.name}}</h1>
+          <div class="prose text-gray-600 leading-relaxed">
+            <p class="text-lg">{{resumeJson.summary}}</p>
+          </div>
+          <div class="flex flex-col space-y-3">
+            <div class="flex items-center text-gray-600">
+              <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                </path>
+              </svg>
+              <span>{{resumeJson.contact.phone}}</span>
+            </div>
+            <div class="flex items-center text-gray-600">
+              <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                </path>
+              </svg>
+              <span>{{resumeJson.contact.email}}</span>
+            </div>
+          </div>
+          <button class="mt-6 inline-flex items-center 
+            px-6 py-3 bg-blue-600 hover:bg-blue-700 
+            text-white font-medium rounded-lg 
+            transition-colors duration-300" (click)="downloadResume()">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+            Download Resume
+          </button>
+        </div>
+
+        <!-- Right Column - Image -->
+        <div class="flex justify-center">
+          <div class="relative w-64 h-64">
+            <img [src]="resumeJson.profileImage" alt="Profile Photo"
+              class="rounded-full w-full h-full object-cover shadow-lg border-4 border-white">
+            <div class="absolute -bottom-4 
+               transform  bg-blue-600 text-white px-6 py-2 
+              rounded-full text-sm font-medium ml-[10px]">
+              {{resumeJson.designation}}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Experience Section -->
-    <div id="experience" class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in delay-100">
+    <div id="experience"
+      class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in delay-100">
       <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Work Experience</h2>
       <div class="space-y-8">
-        <div class="transform hover:scale-[1.02] transition-all duration-300 ease-in-out hover:shadow-md bg-gray-50 rounded-lg p-6" *ngFor="let exp of resumeJson.experience; let i = index" [ngStyle]="{'animation-delay': i * 100 + 'ms'}">
+        <div
+          class="transform hover:scale-[1.02] transition-all duration-300 ease-in-out hover:shadow-md bg-gray-50 rounded-lg p-6"
+          *ngFor="let exp of resumeJson.experience; let i = index" [ngStyle]="{'animation-delay': i * 100 + 'ms'}">
           <h3 class="text-2xl font-semibold text-gray-700">{{exp.role}}</h3>
           <p class="text-blue-600 font-medium mb-3">{{exp.company}} • {{exp.period}}</p>
           <ul class="space-y-2 text-gray-600">
@@ -26,10 +81,12 @@
     </div>
 
     <!-- Education Section -->
-    <div id="education" class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in delay-200">
+    <div id="education"
+      class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in delay-200">
       <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Education</h2>
       <div class="grid gap-6">
-        <div class="transform hover:scale-[1.02] transition-transform duration-300 bg-gray-50 rounded-lg p-6" *ngFor="let edu of resumeJson.education">
+        <div class="transform hover:scale-[1.02] transition-transform duration-300 bg-gray-50 rounded-lg p-6"
+          *ngFor="let edu of resumeJson.education">
           <h3 class="text-xl font-semibold text-gray-700">{{edu.degree}}</h3>
           <p class="text-blue-600">{{edu.institution}}</p>
           <p class="text-gray-600">{{edu.field}}</p>
@@ -40,10 +97,12 @@
     </div>
 
     <!-- Projects Section -->
-    <div id="projects" class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in delay-300">
+    <div id="projects"
+      class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in delay-300">
       <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Projects</h2>
       <div class="grid gap-6">
-        <div class="transform hover:scale-[1.02] transition-transform duration-300 bg-gray-50 rounded-lg p-6" *ngFor="let project of resumeJson.projects">
+        <div class="transform hover:scale-[1.02] transition-transform duration-300 bg-gray-50 rounded-lg p-6"
+          *ngFor="let project of resumeJson.projects">
           <h3 class="text-xl font-semibold text-gray-700">{{project.name}}</h3>
           <p class="text-blue-600 text-sm mb-2">{{project.period}}</p>
           <ul class="space-y-2 text-gray-600">
@@ -57,37 +116,44 @@
     </div>
 
     <!-- Skills Section -->
-    <div id="skills" class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in delay-400">
+    <div id="skills"
+      class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in delay-400">
       <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Technical Skills</h2>
       <div class="flex flex-wrap gap-3">
-        <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-lg text-sm font-medium hover:bg-blue-200 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-sm" 
-              *ngFor="let skill of resumeJson.technical_skills">
+        <span
+          class="px-4 py-2 bg-blue-100 text-blue-800 rounded-lg text-sm font-medium hover:bg-blue-200 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-sm"
+          *ngFor="let skill of resumeJson.technical_skills">
           {{skill}}
         </span>
       </div>
     </div>
 
     <!-- Personal Information Section -->
-    <div id="personal" class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in delay-500">
+    <div id="personal"
+      class="scroll-mt-20 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 p-8 section-content opacity-0 translate-y-4 animate-fade-in delay-500">
       <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Personal Information</h2>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="space-y-4">
           <div class="space-y-3">
-            <p class="text-gray-700"><span class="font-semibold text-gray-900">Date of Birth:</span> {{resumeJson.personal_information.date_of_birth}}</p>
-            <p class="text-gray-700"><span class="font-semibold text-gray-900">Gender:</span> {{resumeJson.personal_information.gender}}</p>
-            <p class="text-gray-700"><span class="font-semibold text-gray-900">Marital Status:</span> {{resumeJson.personal_information.marital_status}}</p>
-            <p class="text-gray-700"><span class="font-semibold text-gray-900">Nationality:</span> {{resumeJson.personal_information.nationality}}</p>
-            <p class="text-gray-700"><span class="font-semibold text-gray-900">Father's Name:</span> {{resumeJson.personal_information.father_name}}</p>
-            <p class="text-gray-700"><span class="font-semibold text-gray-900">Languages:</span> {{resumeJson.personal_information.languages_known.join(', ')}}</p>
-            
+            <p class="text-gray-700"><span class="font-semibold text-gray-900">Date of Birth:</span>
+              {{resumeJson.personal_information.date_of_birth}}</p>
+            <p class="text-gray-700"><span class="font-semibold text-gray-900">Gender:</span>
+              {{resumeJson.personal_information.gender}}</p>
+            <p class="text-gray-700"><span class="font-semibold text-gray-900">Marital Status:</span>
+              {{resumeJson.personal_information.marital_status}}</p>
+            <p class="text-gray-700"><span class="font-semibold text-gray-900">Nationality:</span>
+              {{resumeJson.personal_information.nationality}}</p>
+            <p class="text-gray-700"><span class="font-semibold text-gray-900">Father's Name:</span>
+              {{resumeJson.personal_information.father_name}}</p>
+            <p class="text-gray-700"><span class="font-semibold text-gray-900">Languages:</span>
+              {{resumeJson.personal_information.languages_known.join(', ')}}</p>
+
             <!-- Social Media Links -->
             <div class="mt-4">
               <h4 class="text-lg font-semibold text-gray-900 mb-2">Social Media</h4>
               <div class="flex space-x-4">
-                <a *ngFor="let social of resumeJson.socialMedia" 
-                   [href]="social.link" 
-                   target="_blank" 
-                   class="text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                <a *ngFor="let social of resumeJson.socialMedia" [href]="social.link" target="_blank"
+                  class="text-blue-600 hover:text-blue-800 transition-colors duration-300">
                   <i [class]="'fab fa-' + social.name"></i>
                   <span class="ml-1">{{social.name | titlecase}}</span>
                 </a>
@@ -101,7 +167,8 @@
           <div>
             <h3 class="text-2xl font-semibold text-gray-800 mb-4">Interests</h3>
             <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-sm" *ngFor="let interest of resumeJson.interests">
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-sm"
+                *ngFor="let interest of resumeJson.interests">
                 {{interest}}
               </span>
             </div>
@@ -111,7 +178,8 @@
           <div>
             <h3 class="text-2xl font-semibold text-gray-800 mb-4">Strengths</h3>
             <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-sm" *ngFor="let strength of resumeJson.strengths">
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-lg text-sm"
+                *ngFor="let strength of resumeJson.strengths">
                 {{strength}}
               </span>
             </div>
@@ -128,6 +196,7 @@
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -138,11 +207,25 @@
     animation: fadeIn 0.8s ease-out forwards;
   }
 
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
 
   .section-content {
     opacity: 0;

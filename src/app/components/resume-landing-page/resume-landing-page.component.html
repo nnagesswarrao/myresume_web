@@ -13,34 +13,20 @@
             <p class="text-lg">{{resumeJson.summary}}</p>
           </div>
           <div class="flex flex-col space-y-3">
-            <div class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
-                </path>
-              </svg>
+            <a [href]="'tel:' + resumeJson.contact.phone" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
+              <span class="material-icons mr-3">phone</span>
               <span>{{resumeJson.contact.phone}}</span>
-            </div>
-            <div class="flex items-center text-gray-600">
-              <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                </path>
-              </svg>
+            </a>
+            <a [href]="'mailto:' + resumeJson.contact.email" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
+              <span class="material-icons mr-3">mail</span>
               <span>{{resumeJson.contact.email}}</span>
-            </div>
+            </a>
           </div>
           <button class="mt-6 inline-flex items-center 
             px-6 py-3 bg-blue-600 hover:bg-blue-700 
             text-white font-medium rounded-lg 
             transition-colors duration-300" (click)="downloadResume()">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-            </svg>
+            <span class="material-icons mr-2">download</span>
             Download Resume
           </button>
         </div>
